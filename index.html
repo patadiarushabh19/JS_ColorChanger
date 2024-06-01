@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+  <style>
+    html {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f7ef81; /* Default background color */
+      color: #333; /* Default text color */
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+
+    .canvas {
+      margin: 100px auto 100px;
+      width: 80%;
+      text-align: center;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .button {
+      width: 100px;
+      height: 100px;
+      border: solid black 2px;
+      border-radius: 50%;
+      margin: 10px;
+      box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+    }
+
+    #grey {
+      background: #d4c685;
+    }
+
+    #white {
+      background: #f7ef81;
+    }
+
+    #blue {
+      background: #cfe795;
+    }
+
+    #yellow {
+      background: #a7d3a6;
+    }
+
+    h1,
+    h2 {
+      /*color: #333;*/
+      text-align: center;
+      width: 100%;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-top: 20px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .button {
+        width: 80px;
+        height: 80px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+  <title>JavaScript Background Color Switcher</title>
+</head>
+
+<body>
+
+  <div class="canvas">
+    <h1>Color Scheme Switcher</h1>
+    <span class="button" id="#F2542D"></span>
+    <span class="button" id="#0E9594"></span>
+    <span class="button" id="#F5DFBB"></span>
+    <span class="button" id="#A8D5E2"></span>
+    <h2>
+      Try clicking on one of the colors above
+      <span>to change the background color of this page!</span>
+    </h2>
+  </div>
+  <script>
+    //js code to change color 
+
+    const button = document.querySelectorAll('.button')
+    // console.log(button);
+    const body = document.querySelector('body')
+
+    button.forEach(function (button) {
+      console.log(button);
+      button.addEventListener('click', function (e) {
+        console.log(e);
+        console.log(e.target);
+
+        if (e.target.id === '#F2542D') {
+          body.style.backgroundColor = e.target.id;
+          body.style.color = '#fff'; // Change text color to contrast with grey background
+        }
+
+        if (e.target.id === '#0E9594') {
+          body.style.backgroundColor = e.target.id;
+          body.style.color = '#562C2C'; // Change text color to contrast with white background
+        }
+
+        if (e.target.id === '#F5DFBB') {
+          body.style.backgroundColor = e.target.id;
+          body.style.color = '#333'; // Change text color to contrast with blue background
+        }
+
+        if (e.target.id === '#A8D5E2') {
+          body.style.backgroundColor = e.target.id;
+          body.style.color = '#333'; // Change text color to contrast with yellow background
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
